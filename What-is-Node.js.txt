@@ -10,4 +10,4 @@ A: Node.js is a powerful server-side JS platform for building fast, scalable net
 
 3. Draw a diagram of a full-stack web application and its key components.
 
-A: 
+A: Link - 
