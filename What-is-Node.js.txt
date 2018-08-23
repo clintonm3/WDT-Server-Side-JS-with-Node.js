@@ -1,0 +1,13 @@
+EXERCISES
+
+1. In your own words highlight the differences in functionality and purposes Client-Side and Server-Side code serves in a full-stack web application.
+
+A:  The purpose of the client-side(browser) is to render dynamic web pages.  The purpose for the server is to serve the code for those web pages.  The Client-side sends requests to the server, retrieves data from it and interacts with local storage.  The Server-Side processes user input, responds to requests and interacts with the permanent storage(database). Additionally, client-side interfaces with HTML and the DOM while server-side does not.  Client-side uses AJAX to make HTTP requests while the server side can make direct HTTP requests.
+
+2. What explains Nodes' rise in popularity and use? What does "Isomorphic JavaScript programming" mean? Provide some real-world examples not listed in this checkpoint of companies using Node.js.
+
+A: Node.js is a powerful server-side JS platform for building fast, scalable network applications that is both lightweight and efficient.  It allows web application development to unify around a single programming language.  Isomorphic javascript is the fact that it can run code on both the server and client side.  Paypal, ebay and linkedin are some additional examples.
+
+3. Draw a diagram of a full-stack web application and its key components.
+
+A: 
