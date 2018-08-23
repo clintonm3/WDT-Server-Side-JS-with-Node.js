@@ -1,0 +1,29 @@
+EXERCISES
+
+1. What is npm and what does it do?
+
+A: npm is the node.js package manager.  A package is a set of files constituting a tool you can include in your app.
+
+2. What kind of information does package.json hold?
+
+A: package.json is a file that communicates to npm how your application is structured.  It contains the building blocks for your application.
+
+3. Google another Node package. Using the demo directory run npm install <theNameOfThePackage> --save. Check the contents of your package.json file to make sure that the dependencies list the name of the Node package.
+
+A: Installed lodash and returned
+
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "lodash": "^4.17.10"
+  }
+}
