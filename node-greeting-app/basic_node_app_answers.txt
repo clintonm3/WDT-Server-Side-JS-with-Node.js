@@ -1,0 +1,65 @@
+EXERCISES
+
+1. What is a Node module?
+
+A: A set of functions to include in your application similar to JavaScript libraries.
+
+2. What is the main difference between exports and module.exports?
+
+A:  If you want your module to be a specific object type, use module.exports.
+
+3. Why is using exports recommended?
+
+A: Exports references module.exports so that any reassignment of exports will not be available outside of the module.
+
+PROGRAMMING QUESTIONS
+
+4. Add two more functions, greetingSpanish and greetingIcelandic, in greeting.js.
+
+5. Utilize the two functions in main.js just like greetingEnglish and greetingJapanese.
+
+6. Create another Node module and import it into main.js. Your Node module should have at least two functions within it. Then, call a function from your Node module in main.js.
+
+greeting.js
+exports.greetingEnglish = function(){
+  console.log("Hello");
+}
+
+exports.greetingJapanese = function(){
+  console.log("Konichiwa");
+}
+
+exports.greetingSpanish = function(){
+  console.log("Hola");
+}
+
+export.greetingIcelandic = function(){
+  console.log("Hallo");
+}
+
+
+main.js
+const greetings = require("./greeting.js");
+const parting = require("./parting.js");
+
+// "Hello"
+greetings.greetingEnglish();
+
+// "Konichiwa"
+greetings.greetingJapanese();
+
+// "Hola"
+greetings.greetingSpanish();
+
+// "Hallo"
+greetings.greetingIcelandic();
+
+
+parting.js
+exports.partingEnglish = function(){
+  console.log("Goodbye");
+}
+
+exports.partingSpanish = function(){
+  console.log("Adios");
+}
