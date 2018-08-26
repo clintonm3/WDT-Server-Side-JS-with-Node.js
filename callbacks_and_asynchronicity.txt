@@ -1,0 +1,75 @@
+QUESTIONS
+
+1. What is the difference between readdirSync and readdir?
+
+A:  readdirSync is synchronous and a blocking method that reads a directory.  While, readdir is asynchronous and a non-blocking method to read a directory.
+
+2. What is the event loop and how does it handle asynchronous requests?
+
+A: The event loop is a system to sequentially process tasks.  If the event is asynchronous, node asks the operating system to notify it when the even is ready for processing.  Meanwhile, it continues processing other events in the queue.
+
+3. Given the following code, specify whether the program is asynchronous and non-blocking or synchronous and blocking or synchronous and non-blocking.
+
+const fs = require('fs');
+const file = fs.readFileSync('foo.txt');
+console.log(file.toString());
+
+A: Synchronous and blocking
+
+4. Given the following code, specify whether the program is asynchronous and non-blocking or synchronous and blocking or synchronous and non-blocking.
+
+const fs = require('fs');
+fs.readFile('foo.txt', (err, file) => {
+ if (err) throw err;
+ console.log(file.toString());
+});
+console.log("test");
+
+A: Synchronous and non-blocking
+
+5. In what order will the console.log statements execute in the code below?
+
+const fs = require('fs');
+fs.readFile('foo.txt', (err, file) => {
+ if (err) throw err;
+ console.log("A");
+ console.log("B")
+});
+console.log("C");
+
+A: "C" => "A" => "B"
+
+6. setTimeout is a JavaScript function which calls a function after a set amount of milliseconds. Given the following code, explain in what sequence the functions will run and why.
+
+function greeting() {
+ setTimeout(() => {
+   console.log("friend");
+ }, 100);
+}
+
+function hello(){
+ console.log("hello");
+}
+
+greeting();
+hello();
+
+A: setTimeout causes the greeting call to be held and then pushed to the queue, which clears the stack for hello to execute, followed by greeting to move from queue to stack.
+
+
+7. Create a function which utilizes a callback. Make sure to add console.log statements to understand when your callback function is called.
+
+A:
+function numberOne(callback) {
+  console.log('numberOne');
+  callback('inputs', 'go', 'here');
+  console.log('numberOne finished');
+}
+
+function numberTwo(a, b, c) {
+  console.log('numberTwo called')
+  console.log(a + " " + b + " " + c);
+  console.log('Callback to numberTwo finished');
+}
+
+numberOne(numberTwo);
