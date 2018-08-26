@@ -1,0 +1,47 @@
+####QUESTIONS
+
+> Why is the fs core module important for Node development?
+
+A:  It provides file system functionality that is needed by developers and apps.  This functionality can be seen as the ability to read files, create files, update files, delete files and rename files.
+
+> What is the difference between sync and non-sync methods in the fs module?
+
+A: Blocking is the sync version where your code runs in sequential order.  Asynchronous or non sync is the non-blocking method where your code does not wait for the current line to execute before moving on to the next line.
+
+> Why are modules used
+
+A:  Modules are libraries which are just pieces of code that are imported into a file.  We use modules in order to save time by leveraging the efforts of other developers.
+
+> Why are libraries such as fs used in Node programming?
+
+A:  I have answered this question in questions 1 and 2.  Additionally though, server-side languages must provide a way to access the file system through code.  In Node, fs serves this purpose.
+
+
+#### Code Practice
+
+Create a Github repo called simple-http-node-server. Create an HTTP server on port 3000 with a request handler that creates a file named hello-world.txt. You will be using the fs module to do this. Write the content: "Hello to this great world" to the hello-world.txt file. Please submit your finished code in your submission.
+
+
+const http = require('http');
+const fs = require('fs');
+const port = 3000;
+
+const requestHandler = (request, response) => {
+  console.log(request.url);
+  response.end('Writing file.....',
+  fs.writeFile('hello-world.txt','Hello to this great world','utf8',
+  (err) => {
+    if (err) throw err;
+  console.log('success')
+  }
+  ));
+}
+
+const server = http.createServer(requestHandler);
+
+server.listen(port, (err) => {
+  if (err) {
+    return console.log('something bad happened', err);
+  }
+  console.log(`server is listening on ${port}`);
+})
