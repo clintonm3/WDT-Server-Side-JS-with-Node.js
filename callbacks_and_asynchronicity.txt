@@ -2,7 +2,7 @@ QUESTIONS
 
 1. What is the difference between readdirSync and readdir?
 
-A:  readdirSync is synchronous and a blocking method that reads a directory.  While, readdir is asynchronous and a non-blocking method to read a directory.
+A:  readdirSync is synchronous and a blocking method that reads a directory.  In comparison to, readdir is asynchronous and a non-blocking method to read a directory.
 
 2. What is the event loop and how does it handle asynchronous requests?
 
